@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aplicación para pruebas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body class="">
+
+        <div class="container">
+            <nav id="navbar-example2" class="navbar fixed-top navbar-light bg-light px-3">
+              <a class="navbar-brand" href="#">
+                <img src="../public/assets/img/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                  Variantes
+              </a>
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link" href="#scrollspyHeading1">Series</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#scrollspyHeading2">Géneros</a>
+                </li>
+              </ul>
+            </nav>
+            <br /><br />
+            <div class="jumbotron text-center">
+              <h1>Cátalogo de Series</h1>
+              <h2>No. de Series: 4</h2>
+            </div>
+            
+            <!-- Inicio de Series -->
+            <div id="scrollspyHeading1"><br /><br /><br />
+              <div class="row">
+                <div class="col-sm-6 col-sm-offset-1"><h4>Series</h4></div>
+                <div class="col-sm-1 col-sm-offset-1"></div>
+                <div class="col-sm-5 col-sm-offset-1"><h4>Registrar serie</h4></div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm-6 col-sm-offset-1">
+                  <table class="table table-striped table-hover">
+                    <tr class="table-danger">
+                      <th>Nombre</th>
+                      <th>Temporadas</th>
+                      <th>Sinopsis</th>
+                      <th>Género</th>
+                    </tr>
+          
+                    <tr>
+                      <td>Stranger Things</td>
+                      <td>3</td>
+                      <td>Niña rapada con problemas mentales escapa del psiquiátrico y manipula psicológicamente a un grupo de niños rechazados con el propósito de asesinar al médico que la atendía.</td>
+                      <td>Terror</td>
+                    </tr>
+                    <tr>
+                        <td>Dragon Ball Z</td>
+                        <td>1</td>
+                        <td>Luchadores japoneses se obsesionan con ganar y entrenar, llevando sus cuerpos al límite y consumiendo sustancias peligrosas.</td>
+                        <td>Suspenso</td>
+                    </tr>
+                    <tr>
+                        <td>Bojack Horseman</td>
+                        <td>6</td>
+                        <td>Bojack Horseman es un viejo actor olvidado y fracasado, hundido en las adicciones y con depresión clínica, busca sacar su carrera  flote sin embargo termina arruinando cada buena oportunidad.</td>
+                        <td>Comedia trágica</td>
+                    </tr>
+                    <tr>
+                        <td>Hora de Aventura</td>
+                        <td>10</td>
+                        <td>El joven Finn es un niño esquizofrénico que escapa de su hogar en compañía de su mejor amigo, su perro Jake. Finn imagina una serie innumerable de aventuras al lado de su perro.</td>
+                        <td>Terror psicológico</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-sm-1 col-sm-offset-1"></div>
+                <!-- Inicio del formulario -->
+                <div class="col-sm-5 col-sm-offset-1">
+                  <form #serieForm="ngForm" (ngSubmit)="onSubmit(serieForm)" >
+                    <div class="form-group">
+          
+                      <label>Nombre: </label>
+                      <input type="text" name="nombre" minlength="3" class="form-control" id="nombre" title="Este campo debe contener más de 2 caracteres." required />
+          
+                      <br />
+                      <label>Temporadas: </label>
+                      <input type="number" name="temporadas" class="form-control" id="temporadas" maxlength="2" title="Este campo solo puede contener números de 2 cifras o menos." required/>
+                      
+                      <br />
+                      <label>Sinopsis: </label>
+                      <input type="text" name="sinopsis" class="form-control" id="sinopsis" minlength="11" title="El nombre debe contener más de 11 caracteres." required/>
+          
+                      <br />
+                      <label>Género: </label><br />
+                      <select class="form-select form-select-sm" aria-label=".form-select-sm example" 
+                        name="genero" id="genero" required>
+                        <option value="0" selected>Seleccionar...</option>
+                        <option value="1">Terror</option>
+                        <option value="2">Ciencia Ficción</option>
+                        <option value="3">Fantasía</option>
+                      </select>
+                    </div>
+          
+                    <br />
+                      <table>
+                        <td>
+                          <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+                        </td>
+                        <td>
+                          <button type="submit" class="btn btn-warning btn-lg">Modificar</button>
+                        </td>
+                        <td>
+                          <button type="submit" class="btn btn-danger btn-lg">Eliminar</button>
+                        </td>
+                      </table>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <br /><br /><br />
+          
+        </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+
+</html>
